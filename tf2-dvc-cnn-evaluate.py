@@ -18,24 +18,15 @@ import os
 # 2 = INFO and WARNING messages are not printed
 # 3 = INFO, WARNING, and ERROR messages are not printed
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import datetime
+# import datetime
 import sys
-import random
+# import random
 import pathlib
 
 import tensorflow as tf
 
-from tensorflow.keras.models import Sequential, load_model
-from tensorflow.keras.layers import (Dense, Activation, Dropout, Conv2D,
-                                    Flatten, MaxPooling2D, InputLayer)
-from tensorflow.keras.preprocessing.image import (ImageDataGenerator, 
-                                                  array_to_img, 
-                                                  img_to_array, load_img)
-from tensorflow.keras import applications, optimizers
+from tensorflow.keras.models import  load_model
 
-from tensorflow.keras.callbacks import TensorBoard
-
-import numpy as np
 
 print('Using Tensorflow version:', tf.__version__,
       'Keras version:', tf.keras.__version__,
@@ -48,7 +39,9 @@ print('Using Tensorflow version:', tf.__version__,
 if 'DATADIR' in os.environ:
     DATADIR = os.environ['DATADIR']
 else:
-    DATADIR = "/scratch/project_2000859/demo/extracted/"
+    print("DATADIR is not defined")
+    # sys.exit()
+    DATADIR = 'scratch_2005604'
 
 datapath = os.path.join(DATADIR, "dogs-vs-cats/train-2000/")
 

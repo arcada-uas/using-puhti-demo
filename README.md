@@ -49,6 +49,11 @@ At top right you should see something like this.
 
 ![img.png](pics/img-06.png)
 
+You can check the size of data directory:
+
+    du -sh scratch_2005604/dogs-vs-cats
+
+
 Open `hello-world.py` script file and from contextual menu choose Upload to ...
 
 ![img.png](pics/img-08.png)
