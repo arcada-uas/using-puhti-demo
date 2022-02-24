@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=hello_world
-#SBATCH --account=project_2005604
+#SBATCH --account=
 #SBATCH --partition=test
 #SBATCH --time=00:00:10
 #SBATCH --ntasks=1
