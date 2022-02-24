@@ -19,7 +19,6 @@ import os
 # 3 = INFO, WARNING, and ERROR messages are not printed
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import datetime
-import random
 import pathlib
 
 import tensorflow as tf
@@ -27,14 +26,11 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import (Dense, Activation, Dropout, Conv2D,
                                     Flatten, MaxPooling2D, InputLayer)
-from tensorflow.keras.preprocessing.image import (ImageDataGenerator, 
-                                                  array_to_img, 
-                                                  img_to_array, load_img)
+
 from tensorflow.keras import applications, optimizers
 
 from tensorflow.keras.callbacks import TensorBoard
 
-import numpy as np
 
 print('Using Tensorflow version:', tf.__version__,
       'Keras version:', tf.keras.__version__,
