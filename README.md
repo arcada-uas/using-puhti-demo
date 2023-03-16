@@ -20,20 +20,41 @@ Open a new Terminal and start SSH session
 
 ![img.png](pics/img-03.png)
 
-In the Puhti terminal create a new directory if not exist and make it `cwd`
+~~In the Puhti terminal create a new directory if not exist and make it `cwd`~~
 
 ```
-mkdir -p ~/puhti-work; cd ~/puhti-work
+~~mkdir -p ~/puhti-work; cd ~/puhti-work~~
 ```
 Export variable PROJ with project number for your convenience.
 
 ```
-export PROJ=2005604
+export PROJ=2000859
 ```
+Export variable YEAR with project number for your convenience.
+
+```
+export YEAR=2023
+```
+
+Make this your cwd
+```
+cd /projappl/project_$PROJ/BDA$YEAR
+```
+
+Now create a folder for you if not exists, change cwd and get study material from github
+```
+mkdir -p $USER
+cd $USER
+git clone https://github.com/arcada-uas/using-puhti-demo.git
+cd using-puhti-demo
+ls -lh
+```
+
 Create sym links to the project's scratch disk for your convenience.
 ```
-ln -s /scratch/project_$PROJ scratch_$PROJ
+ln -s /scratch/project_$PROJ/BDA$YEAR /projappl/project_$PROJ/BDA$YEAR/$USER/scratch
 ```
+
 Open Tools > Deployment > Configuration... and create a new one. 
 Then choose Browse Remote Host.
 
@@ -51,7 +72,7 @@ At top right you should see something like this.
 
 You can check the size of data directory:
 
-    du -sh scratch_2005604/dogs-vs-cats
+    du -sh scratch_$PROJ/dogs-vs-cats
 
 
 Open `hello-world.py` script file and from contextual menu choose Upload to ...
